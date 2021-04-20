@@ -53,7 +53,7 @@ function App() {
        {/* pass tittel prop to header.js, this will offeride the default props */}
        {/* <Header tittle='Hai' /> */}
        <Header />
-       <Tasks tasks = {tasks} onDelete = {deleteTask}/>
+       {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask}/> : 'No Tasks To Show'}
       <h1>Hello From React</h1>
       <h2>Hello {name}</h2>
       <h2>Hello {1 + 1}</h2>
