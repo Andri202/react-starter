@@ -1,9 +1,9 @@
 // import logo from './logo.svg';
 // import './App.css';
 import React from 'react';
-import { useState } from 'react'
-import Header from './components/Header'
-import Tasks from './components/Tasks'
+import { useState } from 'react';
+import Header from './components/Header';
+import Tasks from './components/Tasks';
 
 // function
 function App() {
@@ -34,6 +34,12 @@ function App() {
     ]
   )
 
+  // Delete Task
+  const deleteTask = (id) => {
+    // console.log('delete', id);
+    setTasks(tasks.filter((task) => task.id !== id))
+  };
+
   return (
     // components harus punya parent kalo ga ada bisa kae notasi "<>"
     // <>
@@ -47,7 +53,7 @@ function App() {
        {/* pass tittel prop to header.js, this will offeride the default props */}
        {/* <Header tittle='Hai' /> */}
        <Header />
-       <Tasks tasks = {tasks} />
+       <Tasks tasks = {tasks} onDelete = {deleteTask}/>
       <h1>Hello From React</h1>
       <h2>Hello {name}</h2>
       <h2>Hello {1 + 1}</h2>
