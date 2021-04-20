@@ -54,10 +54,10 @@ function App() {
        {/* <Header tittle='Hai' /> */}
        <Header />
        {tasks.length > 0 ? <Tasks tasks = {tasks} onDelete = {deleteTask}/> : 'No Tasks To Show'}
-      <h1>Hello From React</h1>
+      {/* <h1>Hello From React</h1>
       <h2>Hello {name}</h2>
       <h2>Hello {1 + 1}</h2>
-      <h2>hello {x ?  'Yes' : 'No'}</h2>
+      <h2>hello {x ?  'Yes' : 'No'}</h2> */}
     </div>
   );
 }

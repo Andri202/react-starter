@@ -9,11 +9,14 @@ const Header = ({tittle}) => {
     return (
         <header>
             {/* <h1 style = { headingStyle }>{tittle}</h1> */}
-            <h1 className = 'header'>{tittle}</h1>
-            <Button color = 'green' text = 'Add' onClick = {onClick} />
-            <Button color = 'green' text = 'Push Me 1' onClick = {onClick} />
+            <h1 className = 'header'>
+                {tittle}
+                <Button color = 'green' text = 'Add' onClick = {onClick} />
+                </h1>
+            
+            {/* <Button color = 'green' text = 'Push Me 1' onClick = {onClick} />
             <Button color = 'yellow' text = 'Push Me 2' onClick = {onClick} />
-            <Button color = 'red' text = 'Push Me 3' onClick = {onClick} />
+            <Button color = 'red' text = 'Push Me 3' onClick = {onClick} /> */}
         </header>
     )
 }
