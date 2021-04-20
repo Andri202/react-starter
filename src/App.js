@@ -8,6 +8,7 @@ import AddTask from "./components/AddTask";
 
 // function
 function App() {
+  const [showAddTask, setShowAddTask] = useState(false);
   const name = "Andri";
   const x = true;
   const [tasks, setTasks] = useState([
@@ -64,8 +65,8 @@ function App() {
       {/* call Header.js */}
       {/* pass tittel prop to header.js, this will offeride the default props */}
       {/* <Header tittle='Hai' /> */}
-      <Header />
-      <AddTask onAdd={addTask} />
+      <Header onAdd={() => setShowAddTask(!showAddTask)} showAdd={showAddTask} />
+      {showAddTask && <AddTask onAdd={addTask} />}
       {tasks.length > 0 ? (
         <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} />
       ) : (
