@@ -1,20 +1,22 @@
 // rafcp
-import PropTypes from 'prop-types'
-import { FaTimes } from 'react-icons/fa';
+import PropTypes from "prop-types";
+import { FaTimes } from "react-icons/fa";
 
-const Task = ({task, onDelete}) => {
-    return (
-        <div className = 'task'>
-            <h3>{task.text} <FaTimes 
-                style={{ color:'red', cursor: 'pointer' }} 
-                onClick = {() => onDelete(task.id)} /> </h3>
-            <p>{task.day}</p>
-        </div>
-    )
-}
+const Task = ({ task, onDelete, onToggle }) => {
+  return (
+    <div className={`task ${task.reminder ? 'reminder' : ''}`} onDoubleClick={() => onToggle(task.id)}>
+      <h3>
+        {task.text}{" "}
+        <FaTimes
+          style={{ color: "red", cursor: "pointer" }}
+          onClick={() => onDelete(task.id)}
+        />{" "}
+      </h3>
+      <p>{task.day}</p>
+    </div>
+  );
+};
 
-Task.propTypes = {
+Task.propTypes = {};
 
-}
-
-export default Task
+export default Task;
